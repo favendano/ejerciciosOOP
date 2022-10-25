@@ -33,7 +33,7 @@ namespace ejerciciosPOO
             }
             set
             {
-                if (value >= 0 && value <= 5)
+                if (value >= 0 && value <= 10)
                     vCalificacion = value;
                 else vCalificacion = 0;
             }

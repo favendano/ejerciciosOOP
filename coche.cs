@@ -25,7 +25,7 @@ namespace ejerciciosPOO
         {
             string salir = "n";
             int contador = 0;
-            Console.WriteLine("desae cargar algún coche(s/n");
+            Console.WriteLine("desea cargar algún coche(s/n");
             salir = Console.ReadLine();
 
             while (salir.ToLower() != "s")
@@ -95,9 +95,9 @@ namespace ejerciciosPOO
         }
         public string matricula { get; set; }
 
-        public int test()
-        {
-            return puertas * 2;
-        }
+        //public int test()
+        //{
+        //    return puertas * 2;
+        //}
     }
 }
