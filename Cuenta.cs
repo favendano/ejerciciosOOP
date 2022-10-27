@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
+using System.Linq;
 using System.Text;
 
 namespace ejerciciosPOO
@@ -28,6 +29,18 @@ namespace ejerciciosPOO
         { vSaldo += pAbono; }
         public void pagarRecibos(long pRecibo)
         { vSaldo -= pRecibo; }
+        public int dividir(int a, int b)
+        {
+            try
+            {
+                int x = a / b;
+                return x;
+            }
+            catch(SystemException e) {
+                 Console.WriteLine(e.Message);
+                return 0;
+            }
+        }
     }
     class Persona
     {
@@ -89,12 +102,20 @@ namespace ejerciciosPOO
             Cuenta otraCuenta = new Cuenta(123457, 700);
             unaPersona.AgregarCuentas(unaCuenta);
             unaPersona.AgregarCuentas(otraCuenta);
+            unaPersona.AgregarCuentas(otraCuenta);
             unaPersona.Cuentas[0].recibirAbono(1100);
             unaPersona.Cuentas[1].pagarRecibos(750);
-            Console.WriteLine("Es morosa {0}",unaPersona.EsMorosa());
-            unaPersona.Cuentas[0].pagarRecibos(100);
-            unaPersona.Cuentas[1].recibirAbono(100);
-            Console.WriteLine("Es morosa {0}", unaPersona.EsMorosa());
+            //Console.WriteLine("Es morosa {0}",unaPersona.EsMorosa());
+            //unaPersona.Cuentas[0].pagarRecibos(100);
+            //unaPersona.Cuentas[1].recibirAbono(100);
+            //Console.WriteLine("hola {0:F3}", 1.344455);
+            //Console.WriteLine("Es morosa {0}", unaPersona.EsMorosa());
+            //Console.WriteLine("La division es: {0}", unaCuenta.dividir(2, 0));
+            foreach (Cuenta c in unaPersona.Cuentas)
+            { Console.WriteLine("{0}, {1}", c.NumeroCuenta, c.Saldo); }
+
+            //int indice = unaPersona.Cuentas.Select(s => s.;
+
         }
 
     }
